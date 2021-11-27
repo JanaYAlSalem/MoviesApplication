@@ -1,7 +1,12 @@
 package com.example.moviesapplication.overview
 
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.R
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesapplication.databinding.GridViewItemBinding
@@ -11,10 +16,13 @@ class PhotoGridAdapter : androidx.recyclerview.widget.ListAdapter<ResultsItem, P
 
 
     class ResultsItemViewHolder(private var binding: GridViewItemBinding) : RecyclerView.ViewHolder(binding.root) {
+
+
         fun bind(ItemOfMovies : ResultsItem ) { // FlagPhoto(name: String,flag: String
             binding.item = ItemOfMovies
             binding.executePendingBindings()
         }
+        var itemOfMovie = binding.MovieItem
     } // end FlagPhotoViewHolder
 
 
@@ -35,8 +43,17 @@ class PhotoGridAdapter : androidx.recyclerview.widget.ListAdapter<ResultsItem, P
 
 
     override fun onBindViewHolder(holder: ResultsItemViewHolder, position: Int) {
-        val marsPhoto = getItem(position)
-        holder.bind(marsPhoto)
+        val listMovie = getItem(position)
+        holder.bind(listMovie)
+        holder.itemOfMovie.setOnClickListener {
+
+            var action = OverviewFragmentDirections.actionOverviewFragmentToDetailsMovieFragment(id = position)
+            Log.e("TAG","beforerdiraction:${action}")
+            holder.itemOfMovie.findNavController().navigate(action)
+            Log.e("TAG","afterdiraction:${action}")
+
+
+        }
     }
 
 } // end PhotoGridAdapter

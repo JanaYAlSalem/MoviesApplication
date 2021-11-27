@@ -6,8 +6,16 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
-            name="Item"
+            name="details_item"
             type="com.example.moviesapplication.network.ResultsItem" />
+
+        <variable
+            name="MoviesViewModel"
+            type="com.example.moviesapplication.overview.OverviewViewModel" />
+
+        <variable
+            name="detailsMovieFragment"
+            type="com.example.moviesapplication.overview.DetailsMovieFragment" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/MovieItem"
@@ -23,19 +31,44 @@
             android:scaleType="fitXY"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:imageUrl="@{Item.posterPath}"
+            app:imageUrl="@{MoviesViewModel.photos}"
             tools:src="@tools:sample/backgrounds/scenic" />
 
         <TextView
+            android:id="@+id/title_id"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/poster_image"
             android:layout_centerInParent="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:textset="@{Item.title}"
+            app:textset="@{MoviesViewModel.title}"
             android:gravity="center"
             />
+
+        <TextView
+            android:id="@+id/overviwe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/title_id"
+            android:layout_centerInParent="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:textset="@{MoviesViewModel.descriptions}"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/dateofmovie"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/overviwe"
+            android:layout_centerInParent="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:textset="@{MoviesViewModel.date}"
+            android:gravity="center"
+            />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

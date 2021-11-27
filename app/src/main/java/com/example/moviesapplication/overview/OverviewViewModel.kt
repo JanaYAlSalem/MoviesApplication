@@ -1,5 +1,6 @@
 package com.example.moviesapplication.overview
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,8 +20,6 @@ class OverviewViewModel : ViewModel() {
     private val _status = MutableLiveData<MoviesApiStatus>()
     val status: LiveData<MoviesApiStatus> = _status
 
-//    private val _Num = MutableLiveData<List<ResultsItem?>?>()
-//    val Num: LiveData<List<ResultsItem?>?> = _Num
 
     private val _infoItem = MutableLiveData<List<ResultsItem?>?>()
     val infoItem: LiveData<List<ResultsItem?>?> = _infoItem
@@ -28,9 +27,17 @@ class OverviewViewModel : ViewModel() {
     private val _photos = MutableLiveData<String>()
     val photos: LiveData<String> = _photos
 
-//    private val _title = MutableLiveData<DataMovies>()
-//    val title: LiveData<DataMovies> = _title
 
+//    val title=MutableLiveData<String>()
+
+    private val _title = MutableLiveData<String>()
+    val title: LiveData<String> = _title
+
+    private val _descriptions = MutableLiveData<String>()
+    val descriptions: LiveData<String> = _descriptions
+
+    private val _date = MutableLiveData<String>()
+    val date: LiveData<String> = _date
 
     init {
         getItemMovies()
@@ -52,6 +59,15 @@ class OverviewViewModel : ViewModel() {
 
             }
         }
+    }
+    fun informationll(index:Int){
+        var item = _infoItem.value?.get(index)
+
+        _photos.value= item?.posterPath
+        _title.value=item?.title
+        _descriptions.value=item?.overview
+        _date.value=item?.releaseDate
+
     }
 
 
