@@ -18,12 +18,12 @@ class PhotoGridAdapter : androidx.recyclerview.widget.ListAdapter<ResultsItem, P
     class ResultsItemViewHolder(private var binding: GridViewItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
 
-        fun bind(ItemOfMovies : ResultsItem ) { // FlagPhoto(name: String,flag: String
+        fun bind(ItemOfMovies : ResultsItem ) {
             binding.item = ItemOfMovies
             binding.executePendingBindings()
         }
         var itemOfMovie = binding.MovieItem
-    } // end FlagPhotoViewHolder
+    }
 
 
 

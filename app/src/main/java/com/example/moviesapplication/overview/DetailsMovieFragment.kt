@@ -37,12 +37,8 @@ class DetailsMovieFragment : Fragment() {
             index = it!!.getInt("id")
         }
     }
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?): View? {
         binding = FragmentDetailsMovieBinding.inflate(inflater, container, false)
         return binding!!.root
     }
