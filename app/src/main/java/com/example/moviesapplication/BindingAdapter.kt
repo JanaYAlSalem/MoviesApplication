@@ -21,10 +21,8 @@ fun bindImage(ImageView: ImageView, imageUrl: String?) {
         val photoUri = imageUrl.toUri().buildUpon().build()
         Glide.with(ImageView)
             .load("https://image.tmdb.org/t/p/w500${photoUri}")
-            .into(ImageView)
-//            placeholder(R.drawable.loading_img)
-//            error(R.drawable.ic_broken_image)
-    }}
+            .into(ImageView) }
+}
 
 
 @BindingAdapter("textset")
@@ -40,8 +38,3 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<ResultsItem?>?) {
     val adapter = recyclerView.adapter as PhotoGridAdapter
     adapter.submitList(data)
 }
-//@BindingAdapter("Oncl")
-//fun click(){
-////    var action = OverviewFragment.actionoverviewFragmenttodetailsMovieFragment
-//    holder.view.findNavController().navigate(action)
-//}
