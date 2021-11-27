@@ -44,13 +44,11 @@ class PhotoGridAdapter : androidx.recyclerview.widget.ListAdapter<ResultsItem, P
 
     override fun onBindViewHolder(holder: ResultsItemViewHolder, position: Int) {
         val listMovie = getItem(position)
+
         holder.bind(listMovie)
         holder.itemOfMovie.setOnClickListener {
-
             var action = OverviewFragmentDirections.actionOverviewFragmentToDetailsMovieFragment(id = position)
-            Log.e("TAG","beforerdiraction:${action}")
             holder.itemOfMovie.findNavController().navigate(action)
-            Log.e("TAG","afterdiraction:${action}")
 
 
         }
