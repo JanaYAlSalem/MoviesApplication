@@ -12,6 +12,7 @@ import coil.load
 import coil.request.ImageRequest
 import com.bumptech.glide.Glide
 import com.example.moviesapplication.network.ResultsItem
+import com.example.moviesapplication.overview.OverviewFragment
 import com.example.moviesapplication.overview.PhotoGridAdapter
 
 @BindingAdapter("imageUrl")
@@ -39,3 +40,8 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<ResultsItem?>?) {
     val adapter = recyclerView.adapter as PhotoGridAdapter
     adapter.submitList(data)
 }
+//@BindingAdapter("Oncl")
+//fun click(){
+////    var action = OverviewFragment.actionoverviewFragmenttodetailsMovieFragment
+//    holder.view.findNavController().navigate(action)
+//}

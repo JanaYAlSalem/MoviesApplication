@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/ONE/MoviesApplication/app/src/main/res/drawable/loading_img.xml" value="0.1515625" />
         <entry key="..\:/Users/ONE/MoviesApplication/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/ONE/MoviesApplication/app/src/main/res/layout/fragment_details_movie.xml" value="0.2625" />
         <entry key="..\:/Users/ONE/MoviesApplication/app/src/main/res/layout/fragment_overview.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/ONE/MoviesApplication/app/src/main/res/layout/grid_view_item.xml" value="0.1793478260869565" />
       </map>
