@@ -20,7 +20,7 @@ fun bindImage(ImageView: ImageView, imageUrl: String?) {
         val photoUri = imageUrl.toUri().buildUpon().build()
         Glide.with(ImageView)
             .load("https://image.tmdb.org/t/p/w500${photoUri}")
-        Log.e("TAG","imageafter:https://image.tmdb.org/t/p/w500${photoUri}")
+            .into(ImageView)
 //            placeholder(R.drawable.loading_img)
 //            error(R.drawable.ic_broken_image)
     }}
