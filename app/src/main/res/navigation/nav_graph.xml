@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/overviewFragment2"
         android:name="com.example.moviesapplication.overview.OverviewFragment"
-        android:label="OverviewFragment" >
+        android:label="All Movies" >
         <action
             android:id="@+id/action_overviewFragment_to_detailsMovieFragment"
             app:destination="@id/detailsMovieFragment" />
@@ -16,7 +16,7 @@
     <fragment
         android:id="@+id/detailsMovieFragment"
         android:name="com.example.moviesapplication.overview.DetailsMovieFragment"
-        android:label="fragment_details_movie"
+        android:label="Movie details"
         tools:layout="@layout/fragment_details_movie" >
         <argument android:name="id"
             app:argType="integer" />

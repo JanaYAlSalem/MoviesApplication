@@ -28,8 +28,6 @@ class OverviewViewModel : ViewModel() {
     val photos: LiveData<String> = _photos
 
 
-//    val title=MutableLiveData<String>()
-
     private val _title = MutableLiveData<String>()
     val title: LiveData<String> = _title
 
@@ -46,15 +44,14 @@ class OverviewViewModel : ViewModel() {
 
     private fun getItemMovies() {
         viewModelScope.launch {
-            _status.value = MoviesApiStatus.LOADING // loading in first call of getflagPhotos.
+            _status.value = MoviesApiStatus.LOADING
             try {
-//
                 val listResult = MoviesApi.retrofitService.getItemMovies().results
                 _infoItem.value = listResult
-//               _Num.value = MoviesApi.retrofitService.getItemMovies().results
-                _status.value = MoviesApiStatus.DONE // when data is returned
+
+                _status.value = MoviesApiStatus.DONE
             } catch (e: Exception) {
-                _status.value = MoviesApiStatus.ERROR // when data is not return
+                _status.value = MoviesApiStatus.ERROR
                 _infoItem.value = listOf()
 
             }
