@@ -18,73 +18,70 @@
             type="com.example.moviesapplication.overview.DetailsMovieFragment" />
     </data>
     <ScrollView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/MovieItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D6D3D3">
 
-        <ImageView
-            android:id="@+id/poster_image"
-            android:layout_width="237dp"
-            android:layout_height="362dp"
-            android:layout_marginStart="88dp"
-            android:layout_marginTop="48dp"
-            android:adjustViewBounds="true"
-            android:padding="2dp"
-            android:scaleType="fitXY"
-            app:imageUrl="@{MoviesViewModel.photos}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title_id"
-            tools:src="@tools:sample/backgrounds/scenic" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/MovieItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/title_id"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="56dp"
-            android:gravity="center"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:textset="@{MoviesViewModel.title}"
-            tools:text="Title" />
+            <ImageView
+                android:id="@+id/poster_image"
+                android:layout_width="412dp"
+                android:layout_height="396dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                app:imageUrl="@{MoviesViewModel.photos}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/backgrounds/scenic" />
 
-        <TextView
-            android:id="@+id/overviwe"
-            android:layout_width="353dp"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="8dp"
-            android:gravity="left"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dateofmovie"
-            app:textset="@{MoviesViewModel.descriptions}"
-            tools:text="dis" />
+            <TextView
+                android:id="@+id/title_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="10sp"
+                android:layout_marginTop="20dp"
+                android:gravity="left"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#2C2B2B"
+                app:layout_constraintEnd_toEndOf="@id/poster_image"
+                app:layout_constraintStart_toStartOf="@id/poster_image"
+                app:layout_constraintTop_toBottomOf="@id/poster_image"
+                app:textset="@{MoviesViewModel.title}"
+                tools:text="Title" />
 
-        <TextView
-            android:id="@+id/dateofmovie"
-            android:layout_width="328dp"
-            android:layout_height="26dp"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="16dp"
-            android:gravity="right"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/poster_image"
-            app:textset="@{MoviesViewModel.date}"
-            tools:text="20-02-2021" />
+            <TextView
+                android:id="@+id/dateofmovie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                app:layout_constraintStart_toStartOf="@id/poster_image"
+                app:layout_constraintTop_toBottomOf="@id/title_id"
+                app:textset="@{MoviesViewModel.date}"
+                tools:text="20-02-2021" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/overviwe"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/adamina"
+                android:gravity="left"
+                android:paddingTop="20sp"
+                android:paddingBottom="10sp"
+                android:textColor="#2C2B2B"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/poster_image"
+                app:layout_constraintStart_toStartOf="@id/poster_image"
+                app:layout_constraintTop_toBottomOf="@id/dateofmovie"
+                app:textset="@{MoviesViewModel.descriptions}"
+                tools:text="dis" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>
