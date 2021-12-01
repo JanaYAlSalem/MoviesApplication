@@ -16,10 +16,7 @@ class OverviewFragment : Fragment() {
     private val viewModel: OverviewViewModel by activityViewModels()
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding = FragmentOverviewBinding.inflate(inflater)
         binding.lifecycleOwner = this
         binding.overViewModel = viewModel
